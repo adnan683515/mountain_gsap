@@ -86,7 +86,6 @@ const Hero = () => {
                         start: "top top",
                         end: "bottom top",
                         scrub: true,
-                        markers: true,
                     },
                 });
 
@@ -159,7 +158,7 @@ const Hero = () => {
     return (
         <div
             ref={container}
-            className="relative overflow-hidden min-h-[180vh]"
+            className="relative overflow-hidden "
         >
             {/* Background */}
             <img
@@ -173,7 +172,7 @@ const Hero = () => {
                 ref={title}
                 className="
     absolute
-    top-1/5 sm:top-1/4
+    top-1/5 sm:top-1/2
     left-1/2
     -translate-x-1/2 -translate-y-1/2
     text-white
@@ -190,7 +189,7 @@ const Hero = () => {
             {/* Plane */}
             <img
                 ref={planeref}
-                className="absolute left-0  top-[25%] w-[40%] sm:top-[30%]  sm:w-[25%] md:w-[20%]"
+                className="absolute left-0  top-[25%] w-[40%] sm:top-[60%]  sm:w-[25%] md:w-[20%]"
                 src={plane}
                 alt="Plane"
             />
@@ -217,6 +216,9 @@ const Hero = () => {
 
 
             <img ref={cludref3} src={cloud3} className=" w-[50%] sm:w-[35%] absolute right-0 top-[10%]" alt="" />
+
+
+            {/* <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div> */}
 
 
         </div>
