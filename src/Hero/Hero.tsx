@@ -173,14 +173,14 @@ const Hero = () => {
                 ref={title}
                 className="
     absolute
-    top-1/2 sm:top-1/4
+    top-1/5 sm:top-1/4
     left-1/2
     -translate-x-1/2 -translate-y-1/2
     text-white
-    text-3xl sm:text-4xl md:text-6xl
+    text-4xl sm:text-4xl md:text-6xl
     text-center
     font-bold
-    px-4
+    sm:px-4
   "
             >
                 Where peace meets majestic mountains.
@@ -199,24 +199,24 @@ const Hero = () => {
             <div
                 ref={cloudeRef}
                 className="absolute top-6 sm:top-10 left-0 w-full
-                   h-[180px] sm:h-[250px] md:h-[300px]
+                    sm:h-[250px] md:h-[300px]
                    pointer-events-none"
             >
                 <img
-                    className="absolute opacity-30 w-[20%] left-[6.25%] z-20"
+                    className="absolute opacity-30  w-[50%] sm:w-[20%] sm:left-[6.25%] z-20"
                     src={cloude1}
                     alt="Cloud"
                 />
 
                 <img
-                    className="absolute w-[20%]  opacity-45 top-5 left-[12.5%] z-10"
+                    className="absolute w-[50%]  sm:w-[20%]  opacity-45 top-5 left-[12.5%] z-10"
                     src={cloud2}
                     alt="Cloud"
                 />
             </div>
 
 
-            <img ref={cludref3} src={cloud3} className="  w-[35%] absolute right-0 top-[10%]" alt="" />
+            <img ref={cludref3} src={cloud3} className=" w-[50%] sm:w-[35%] absolute right-0 top-[10%]" alt="" />
 
 
         </div>
