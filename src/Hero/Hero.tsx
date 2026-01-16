@@ -6,6 +6,8 @@ import mountain from "../assets/mountain.jpg";
 import plane from "../assets/plane.png";
 import cloude1 from "../assets/cloud1.png";
 import cloud2 from "../assets/edited-photo (3).png";
+import cloud3 from '../assets/cloud3.png'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +16,7 @@ const Hero = () => {
     const title = useRef<HTMLHeadingElement | null>(null);
     const planeref = useRef<HTMLImageElement | null>(null);
     const cloudeRef = useRef<HTMLDivElement | null>(null);
+    const cludref3 = useRef<HTMLImageElement | null>(null)
 
     /* ---------------- TITLE ANIMATION ---------------- */
     useEffect(() => {
@@ -41,7 +44,7 @@ const Hero = () => {
 
     /* ---------------- PLANE + CLOUD RESPONSIVE ---------------- */
     useEffect(() => {
-        if (!container.current || !planeref.current || !cloudeRef.current) return;
+        if (!container.current || !planeref.current || !cloudeRef.current || !cludref3.current) return;
 
         const ctx = gsap.context(() => {
             const mm = gsap.matchMedia();
@@ -53,7 +56,7 @@ const Hero = () => {
                     { x: -200, opacity: 0 },
                     {
                         x: "100vw",
-                        opacity: 1,
+                        opacity: 3,
                         scrollTrigger: {
                             trigger: container.current,
                             start: "5% top",
@@ -73,6 +76,20 @@ const Hero = () => {
                         scrub: true,
                     },
                 });
+
+
+                gsap.to(cludref3.current, {
+                    y: -window.innerHeight / 2,
+                    // opacity: 0.7,
+                    scrollTrigger: {
+                        trigger: container.current,
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: true,
+                        markers: true,
+                    },
+                });
+
             });
 
             /* ---------- TABLET ---------- */
@@ -124,12 +141,21 @@ const Hero = () => {
                     },
                 });
             });
+
+
+
+
+
+
         }, container);
 
         return () => ctx.revert();
     }, []);
 
-    /* ---------------- JSX ---------------- */
+
+
+
+
     return (
         <div
             ref={container}
@@ -188,6 +214,11 @@ const Hero = () => {
                     alt="Cloud"
                 />
             </div>
+
+
+            <img ref={cludref3} src={cloud3} className="  w-[35%] absolute right-0 top-[10%]" alt="" />
+
+
         </div>
     );
 };
